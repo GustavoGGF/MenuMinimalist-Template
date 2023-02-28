@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #201b2c;
+}
+
+.navigation {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #353a4b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-delay: .8s;
+}
+
+.navigation.active {
+    width: 200px;
+    height: 200px;
+    transition-delay: 0s;
+}
+
+.navigation span {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+    transition: width .5s, height .5s, transform .5s;
+    transition-delay: calc(.1s * var(--i));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.active span {
+    transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+    width: 45px;
+    height: 45px;
+    background: #2d323f;
+}
+
+.navigation.active span img {
+    width: 20px;
+    opacity: 1;
+}
+
+.navigation span img  {
+    opacity: 0;  
+}
+
+.navigation.active span:hover {
+    background: #2dfc52;
+    filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52) drop-shadow(0 0 15px #2dfc52);
+}
